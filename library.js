@@ -162,19 +162,18 @@ export function arrayOfStrings(length, maxStrLength, letterCase) {
  * Return a random array of minimum 5 strings with "target" hidden in the array.
  * 
  * @param {Number} length - a number greater than 5.
- * @param {String} target - the string to hide must not be an empty string.
+ * @param {String} target - the string to hide must not be less than 2 characters in length.
  * @returns {Array} A sorted array of strings with the target included only once
  */
-export function hide_string(length, target) {
-  if (length < 5) return -1;
-  if (!target) return -1;
+export function hideString(length, target) {
+  if (length < 5 || !target || target.length < 2) return -1;
 
   // Create an array of random strings
-  let retArray = arrayOfStrings(length, target.length, 0);  
+  let retArray = arrayOfStrings(length, target.length + randInt(-1, 2), 2);  
   // Insert the target
-  retArray[randInt(0, length-1)] = target;
+  retArray[randInt(0, length-1)] = target.toLowerCase();
   
-  // Sort and return (should we?)
+  // Sort and return
   return retArray.sort();
 }
 
@@ -232,7 +231,7 @@ export function sortedArrayOfInts(n, min, max, duplicates = false) {
   return array;
 }
 
-/** Return a sorted array of integers from min to max.
+/** Return an array of integers in exact order from min to max.
  * @param {number} min - The starting integer value
  * @param {number} max - The largest (ending) integer value
  * @returns The sorted array of integers */
