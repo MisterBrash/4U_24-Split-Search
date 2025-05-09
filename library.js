@@ -201,3 +201,55 @@ export function hideInt(length, min, max, target) {
   // Sort and return (should we sort?)
   return retArray.sort((a, b) => (a - b));
 }
+
+/** Return an array of size length in descending order
+ * @param {number} length - The size of the array
+ * @returns {Array} The descending order array of integers
+ */
+export function worstCase(length) {
+  let output = [];
+  for (let i = length; i > 0; i--) {
+    output.push(i);
+    // Should I add a duplicate?
+    if ((i > 1) && (Math.round(Math.random()) == 0)) {
+      output.push(i);
+      i--;
+    }
+  }
+  return output;
+}
+
+/** Return a sorted array of integers from min to max.
+ * @param {Number} n - The number of elements to put in the array
+ * @param {Number} min - The starting integer value
+ * @param {Number} max - The largest (ending) integer value
+ * @param {Boolean} duplicates - Whether to permit duplicate values or not, defaults to false
+ * @returns {Array} The sorted array of integers */
+export function sortedArrayOfInts(n, min, max, duplicates = false) {
+  let array = this.arrayOfInts(n, min, max, true, duplicates)
+
+  array.sort(function (a, b) { return a - b });
+  return array;
+}
+
+/** Return a sorted array of integers from min to max.
+ * @param {number} min - The starting integer value
+ * @param {number} max - The largest (ending) integer value
+ * @returns The sorted array of integers */
+export function straightArrayOfInts(min, max) {
+  let array = [];
+  for (let i = min; i <= max; i++)
+    array.push(i);
+  return array;
+}
+
+/** Return the index of the target inside array "list"
+ * @param {Array} list - The sorted array of elements to search
+ * @param {Number or String} target - The element being sought
+ * @returns {Number} The index of the target element or -1 */
+export function linearSearch(list, target) {
+  for (let i = 0; i < list.length; i++)
+    if (target == list[i]) return i;
+  return -1;
+}
+

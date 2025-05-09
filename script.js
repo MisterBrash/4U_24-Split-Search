@@ -1,21 +1,26 @@
-/*
- * 4.3 Split Search
+/**
+ * 24 - Split Search
  *
  * ICS4U - Mr. Brash 🐿️
  * 
- * Read the README and see https://www.brash.ca/ics4uc/4/3
+ * Read the README carefully and ask if you have ANY questions.
  *
  * NOTE: This task is an assignment and has multiple parts.
  *
  * Author:
  */
 'use strict';
-const Library = require("./library.js");
 
-// Optional arrays useful for testing. Uncomment to use (may take a while to create the huge one)
-// const huge_array = Library.straightArrayOfInts(-9819824, 99494623);
-// const large_array = Library.sortedArrayOfInts(150000, -9999999, 9999999)
-// const medium_array = Library.sortedArrayOfInts(1500, -99999, 99999);
+import { straightArrayOfInts, sortedArrayOfInts, arrayOfInts, hideInt, hide_string } from "./library.js"
+
+/** 
+ * Optional arrays, maybe useful for testing. 
+ * May take a while to create the huge one)
+ ***/
+
+// const huge_array = straightArrayOfInts(-9819824, 99494623);
+// const large_array = sortedArrayOfInts(150000, -9999999, 9999999)
+// const medium_array = sortedArrayOfInts(1500, -99999, 99999);
 // const small_array = [-6, -3, -1, 0, 1, 2, 5, 6, 10];
 // const alpha_array = ['a','b','c','d','e','f','g','h','i','k','l','m','y','z']
 // const str_array = ["abacus", "alpaca", "apple", "banana", "defense", "fox", "fruit", "groot", "hammer", "happy", "hat", "kiwi", "monkey", "offense", "racket", "rocket", "written", "yellow", "yeti", "zebra"];
@@ -30,3 +35,4 @@ const Library = require("./library.js");
 function split_search(list, target, low = 0, high = list.length-1) {
   
 }
+
